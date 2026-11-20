@@ -104,9 +104,7 @@ static void now_playing(void)
            repeat_all ? "  [Repeat All ON]" : "  [Repeat All OFF]");
 }
 
-/* ---------- circular DLL operations ---------- */
 
-/* Insert as the only node, or link into an existing ring. */
 static void link_after(Song *pos, Song *node)
 {
     Song *nxt = pos->next;
@@ -131,7 +129,7 @@ void insert_at_end(Song *node)
         insert_empty(node);
         return;
     }
-    /* tail is head->prev in a circular list — O(1) */
+  
     link_after(head->prev, node);
     size++;
 }
@@ -142,7 +140,7 @@ void insert_at_beginning(Song *node)
         insert_empty(node);
         return;
     }
-    link_after(head->prev, node); /* insert before head, then reassign */
+    link_after(head->prev, node);
     head = node;
     size++;
 }
@@ -185,7 +183,7 @@ Song *find_by_title(const char *title)
     return NULL;
 }
 
-/* Unlink node from the ring. O(1) after we have the pointer. */
+
 int delete_song(Song *node)
 {
     if (!node || !head)
