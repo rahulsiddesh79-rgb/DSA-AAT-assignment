@@ -81,7 +81,7 @@ Fill in before GitHub submit.
 
 | Name | USN | Role |
 |------|-----|------|
-| RAHUL.S     | 1DS25AI083    | Backend development,data structure and algorithm
+| RAHUL.S     | 1DS25AI083    | Backend development,data structures and algorithm 
 
 |      |     | |
 |      |     | |
